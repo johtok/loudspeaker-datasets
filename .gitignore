@@ -3,3 +3,10 @@ dtu_34871-NL-Transducers
 !/tars/.gitignore
 dtu_34871-NL-Transducers.tar.zst
 speakers.tar.zst
+# derived numpy exports
+numpy_datasets/
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+# python cache
+__pycache__/

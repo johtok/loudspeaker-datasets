@@ -1,0 +1,15 @@
+[workspace]
+authors = ["Johannes Nørskov Toke <johannestoke@gmail.com>"]
+channels = ["conda-forge"]
+name = "loudspeaker-datasets"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+prep_data = "bash scripts/prep_data.sh"
+convert_expd = "python scripts/convert_expd_to_npz.py"
+
+[dependencies]
+python = "3.11.*"
+numpy = "*"
+scipy = "*"
