@@ -73,6 +73,25 @@ print(metadata["arrays"]["voltage"])
 Use `data.files` and the metadata JSON to identify the canonical field names
 before downstream processing.
 
+## Exporting Loudspeaker.py-style HDF5
+
+The training code in `../Loudspeaker.py` expects a timeseries HDF5 layout with a
+root `time` dataset and `sample_XXXXXX` groups holding `input_signal` and
+`states`. Convert the ExpD pink-noise measurement and the processed `speakers/*`
+ASDF files with:
+
+```bash
+python scripts/convert_loudspeaker_to_timeseries_hdf5.py expd --force
+python scripts/convert_loudspeaker_to_timeseries_hdf5.py asdf \
+  --input speakers/libratone_3inch/processed.asdf \
+  --output hdf5_datasets/speakers/libratone_3inch_timeseries_dataset.h5 \
+  --force
+python scripts/convert_loudspeaker_to_timeseries_hdf5.py asdf \
+  --input speakers/purifi/processed.asdf \
+  --output hdf5_datasets/speakers/purifi_timeseries_dataset.h5 \
+  --force
+```
+
 ## Loudspeaker dataset standard
 
 To keep this repository consistent across future measurements:

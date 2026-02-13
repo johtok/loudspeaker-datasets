@@ -5,8 +5,11 @@ dtu_34871-NL-Transducers.tar.zst
 speakers.tar.zst
 # derived numpy exports
 numpy_datasets/
+# derived hdf5 exports
+hdf5_datasets/
 # pixi environments
 .pixi/*
 !.pixi/config.toml
 # python cache
 __pycache__/
+plots/
